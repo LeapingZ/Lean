@@ -270,9 +270,6 @@ class Currencies(System.object):
     def GetCurrencySymbol(currency: str) -> str:
         pass
 
-    CfdCurrencyPairs: List[str]
-    CryptoCurrencyPairs: List[str]
-    CurrencyPairs: List[str]
     CurrencySymbols: Dictionary[str, str]
     NullCurrency: str
     USD: str
@@ -305,6 +302,15 @@ class DataNormalizationMode(System.Enum, System.IConvertible, System.IFormattabl
     TotalReturn: 'DataNormalizationMode'
 
 
+class DataProviderEventArgs(System.EventArgs):
+    """ Defines a base class for QuantConnect.Interfaces.IDataProviderEvents """
+    def __init__(self, *args): #cannot find CLR constructor
+        pass
+
+    Symbol: QuantConnect.Symbol
+
+
+
 class DateFormat(System.object):
     """ Shortcut date format strings """
     DB: str
@@ -333,13 +339,13 @@ class DelistingType(System.Enum, System.IConvertible, System.IFormattable, Syste
     Warning: 'DelistingType'
 
 
-class DownloadFailedEventArgs(System.EventArgs):
+class DownloadFailedEventArgs(QuantConnect.DataProviderEventArgs):
     """
     Event arguments for the QuantConnect.Interfaces.IDataProviderEvents.DownloadFailed event
     
-    DownloadFailedEventArgs(message: str, stackTrace: str)
+    DownloadFailedEventArgs(symbol: Symbol, message: str, stackTrace: str)
     """
-    def __init__(self, message: str, stackTrace: str) -> QuantConnect.DownloadFailedEventArgs:
+    def __init__(self, symbol: QuantConnect.Symbol, message: str, stackTrace: str) -> QuantConnect.DownloadFailedEventArgs:
         pass
 
     Message: str

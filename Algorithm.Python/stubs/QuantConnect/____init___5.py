@@ -111,7 +111,7 @@ class Time(System.object):
         pass
 
     @staticmethod
-    def GetStartTimeForTradeBars(exchangeHours: QuantConnect.Securities.SecurityExchangeHours, end: datetime.datetime, barSize: datetime.timedelta, barCount: int, extendedMarketHours: bool) -> datetime.datetime:
+    def GetStartTimeForTradeBars(exchangeHours: QuantConnect.Securities.SecurityExchangeHours, end: datetime.datetime, barSize: datetime.timedelta, barCount: int, extendedMarketHours: bool, dataTimeZone: NodaTime.DateTimeZone) -> datetime.datetime:
         pass
 
     @staticmethod

@@ -172,6 +172,10 @@ class OptionFilterUniverseEx(System.object):
     def Where(universe: QuantConnect.Securities.OptionFilterUniverse, predicate: typing.Callable[[QuantConnect.Symbol], bool]) -> QuantConnect.Securities.OptionFilterUniverse:
         pass
 
+    @staticmethod
+    def WhereContains(universe: QuantConnect.Securities.OptionFilterUniverse, filterList: typing.List[QuantConnect.Symbol]) -> QuantConnect.Securities.OptionFilterUniverse:
+        pass
+
     __all__: list
 
 

@@ -57,6 +57,10 @@ class Extensions(System.object):
         pass
 
     @staticmethod
+    def Adjust(data: QuantConnect.Data.BaseData, scale: float) -> QuantConnect.Data.BaseData:
+        pass
+
+    @staticmethod
     def Batch(resultPackets: typing.List[QuantConnect.Packets.AlphaResultPacket]) -> QuantConnect.Packets.AlphaResultPacket:
         pass
 
@@ -151,6 +155,10 @@ class Extensions(System.object):
         pass
 
     @staticmethod
+    def GetExerciseDirection(right: QuantConnect.OptionRight, isShort: bool) -> QuantConnect.Orders.OrderDirection:
+        pass
+
+    @staticmethod
     def GetExtension(str: str) -> str:
         pass
 
@@ -160,6 +168,10 @@ class Extensions(System.object):
 
     @staticmethod
     def GetMD5Hash(stream: System.IO.Stream) -> typing.List[bytes]:
+        pass
+
+    @staticmethod
+    def GetNormalizedPrice(config: QuantConnect.Data.SubscriptionDataConfig, price: float) -> float:
         pass
 
     @staticmethod
@@ -220,7 +232,16 @@ class Extensions(System.object):
         pass
 
     @staticmethod
+    @typing.overload
     def Normalize(input: float) -> float:
+        pass
+
+    @staticmethod
+    @typing.overload
+    def Normalize(data: QuantConnect.Data.BaseData, config: QuantConnect.Data.SubscriptionDataConfig) -> QuantConnect.Data.BaseData:
+        pass
+
+    def Normalize(self, *args) -> QuantConnect.Data.BaseData:
         pass
 
     @staticmethod
@@ -308,6 +329,10 @@ class Extensions(System.object):
         pass
 
     @staticmethod
+    def Scale(data: QuantConnect.Data.BaseData, factor: typing.Callable[[float], float]) -> QuantConnect.Data.BaseData:
+        pass
+
+    @staticmethod
     def SecurityTypeToLower(securityType: QuantConnect.SecurityType) -> str:
         pass
 
@@ -360,6 +385,10 @@ class Extensions(System.object):
         pass
 
     @staticmethod
+    def ToHexString(source: typing.List[bytes]) -> str:
+        pass
+
+    @staticmethod
     def ToHigherResolutionEquivalent(timeSpan: datetime.timedelta, requireExactMatch: bool) -> QuantConnect.Resolution:
         pass
 
@@ -385,6 +414,10 @@ class Extensions(System.object):
 
     @staticmethod
     def ToPyList(enumerable: System.Collections.IEnumerable) -> Python.Runtime.PyList:
+        pass
+
+    @staticmethod
+    def ToQueryString(pairs: System.Collections.Generic.IDictionary[str, object]) -> str:
         pass
 
     @staticmethod

@@ -56,7 +56,7 @@ class IOptionPriceModel:
         pass
 
 
-class Option(QuantConnect.Securities.Security, QuantConnect.Interfaces.IOptionPrice, QuantConnect.Securities.IDerivativeSecurity, QuantConnect.Interfaces.ISecurityPrice):
+class Option(QuantConnect.Securities.Security, QuantConnect.Securities.IDerivativeSecurity, QuantConnect.Interfaces.IOptionPrice, QuantConnect.Interfaces.ISecurityPrice):
     """
     Option Security Object Implementation for Option Assets
     

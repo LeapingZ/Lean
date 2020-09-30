@@ -94,13 +94,13 @@ class SplitType(System.Enum, System.IConvertible, System.IFormattable, System.IC
     Warning: 'SplitType'
 
 
-class StartDateLimitedEventArgs(System.EventArgs):
+class StartDateLimitedEventArgs(QuantConnect.DataProviderEventArgs):
     """
     Event arguments for the QuantConnect.Interfaces.IDataProviderEvents.StartDateLimited event
     
-    StartDateLimitedEventArgs(message: str)
+    StartDateLimitedEventArgs(symbol: Symbol, message: str)
     """
-    def __init__(self, message: str) -> QuantConnect.StartDateLimitedEventArgs:
+    def __init__(self, symbol: QuantConnect.Symbol, message: str) -> QuantConnect.StartDateLimitedEventArgs:
         pass
 
     Message: str
